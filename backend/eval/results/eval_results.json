@@ -1,0 +1,6098 @@
+[
+  {
+    "id": "EVAL-01",
+    "name": "Israel conflict only",
+    "tier": 1,
+    "active_event_ids": [
+      "DISRUPT-001"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-OC-01",
+          "SG-PB-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-003": 0.0
+        },
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-OC-01",
+          "SG-PB-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 3
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-02",
+    "name": "Red Sea attacks only",
+    "tier": 1,
+    "active_event_ids": [
+      "DISRUPT-002"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-04",
+          "SG-OC-01",
+          "SG-OC-02",
+          "SG-PB-01",
+          "SG-SC-01",
+          "SG-SC-03"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.6667,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 0.8333,
+        "recall": 0.8333,
+        "f1": 0.8333,
+        "true_positives": [
+          "SG-OC-01",
+          "SG-OC-02",
+          "SG-PB-01",
+          "SG-SC-01",
+          "SG-SC-03"
+        ],
+        "false_positives": [
+          "SG-HE-01"
+        ],
+        "false_negatives": [
+          "SG-HE-04"
+        ]
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 4
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-03",
+    "name": "Hormuz closure only",
+    "tier": 1,
+    "active_event_ids": [
+      "DISRUPT-003"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-HE",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-004": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-PM",
+      "correct_material": false
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    }
+  },
+  {
+    "id": "EVAL-04",
+    "name": "QatarEnergy force majeure",
+    "tier": 1,
+    "active_event_ids": [
+      "DISRUPT-004"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-HE",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.5,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-HE",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "true_positives": [
+          "SG-HE-01"
+        ],
+        "false_positives": [],
+        "false_negatives": [
+          "SG-PM-01"
+        ]
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    }
+  },
+  {
+    "id": "EVAL-05",
+    "name": "Jebel Ali disruption only",
+    "tier": 1,
+    "active_event_ids": [
+      "DISRUPT-005"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-HE",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.5,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-PM",
+      "correct_material": false
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "true_positives": [
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": [
+          "SG-HE-01"
+        ]
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 3
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    }
+  },
+  {
+    "id": "EVAL-06",
+    "name": "Israel conflict + Red Sea attacks",
+    "tier": 2,
+    "active_event_ids": [
+      "DISRUPT-001",
+      "DISRUPT-002"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-04",
+          "SG-OC-01",
+          "SG-OC-02",
+          "SG-PB-01",
+          "SG-SC-01",
+          "SG-SC-03"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-005": 0.0,
+          "STRAT-006": 0.0
+        },
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 0.8333,
+        "recall": 0.8333,
+        "f1": 0.8333,
+        "true_positives": [
+          "SG-OC-01",
+          "SG-OC-02",
+          "SG-PB-01",
+          "SG-SC-01",
+          "SG-SC-03"
+        ],
+        "false_positives": [
+          "SG-HE-01"
+        ],
+        "false_negatives": [
+          "SG-HE-04"
+        ]
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 4
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-07",
+    "name": "Israel conflict + Hormuz closure",
+    "tier": 2,
+    "active_event_ids": [
+      "DISRUPT-001",
+      "DISRUPT-003"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-004": 0.0,
+          "STRAT-005": 0.0,
+          "STRAT-007": 0.0
+        },
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 4
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-08",
+    "name": "Israel conflict + Qatar force majeure",
+    "tier": 2,
+    "active_event_ids": [
+      "DISRUPT-001",
+      "DISRUPT-004"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.75,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-005": 0.0
+        },
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01"
+        ],
+        "false_positives": [],
+        "false_negatives": [
+          "SG-PM-01"
+        ]
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 3
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-09",
+    "name": "Israel conflict + Jebel Ali disruption",
+    "tier": 2,
+    "active_event_ids": [
+      "DISRUPT-001",
+      "DISRUPT-005"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.75,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-005": 0.0
+        },
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571,
+        "true_positives": [
+          "SG-OC-01",
+          "SG-PB-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": [
+          "SG-HE-01"
+        ]
+      },
+      "risk_level_accuracy": 0.6667,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 5
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-10",
+    "name": "Red Sea attacks + Hormuz closure",
+    "tier": 2,
+    "active_event_ids": [
+      "DISRUPT-002",
+      "DISRUPT-003"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-HE-04",
+          "SG-OC-01",
+          "SG-OC-02",
+          "SG-PB-01",
+          "SG-PM-01",
+          "SG-SC-01",
+          "SG-SC-03"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.75,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-004": 0.0,
+          "STRAT-005": 0.0,
+          "STRAT-006": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": [
+          "SG-HE-04",
+          "SG-OC-02",
+          "SG-SC-01",
+          "SG-SC-03"
+        ]
+      },
+      "risk_level_accuracy": 0.5,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 4
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-11",
+    "name": "Red Sea attacks + Qatar force majeure",
+    "tier": 2,
+    "active_event_ids": [
+      "DISRUPT-002",
+      "DISRUPT-004"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-HE-04",
+          "SG-OC-01",
+          "SG-OC-02",
+          "SG-PB-01",
+          "SG-PM-01",
+          "SG-SC-01",
+          "SG-SC-03"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.625,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-004": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 0.375,
+        "f1": 0.5455,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01"
+        ],
+        "false_positives": [],
+        "false_negatives": [
+          "SG-HE-04",
+          "SG-OC-02",
+          "SG-PM-01",
+          "SG-SC-01",
+          "SG-SC-03"
+        ]
+      },
+      "risk_level_accuracy": 0.3333,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 3
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-12",
+    "name": "Red Sea attacks + Jebel Ali disruption",
+    "tier": 2,
+    "active_event_ids": [
+      "DISRUPT-002",
+      "DISRUPT-005"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-HE-04",
+          "SG-OC-01",
+          "SG-OC-02",
+          "SG-PB-01",
+          "SG-PM-01",
+          "SG-SC-01",
+          "SG-SC-03"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.625,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-004": 0.0,
+          "STRAT-005": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": [
+          "SG-HE-04",
+          "SG-OC-02",
+          "SG-SC-01",
+          "SG-SC-03"
+        ]
+      },
+      "risk_level_accuracy": 0.25,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 4
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-13",
+    "name": "Hormuz closure + Qatar force majeure",
+    "tier": 2,
+    "active_event_ids": [
+      "DISRUPT-003",
+      "DISRUPT-004"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route",
+          "direct"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-HE",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-004": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-PM",
+      "correct_material": false
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.5,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    }
+  },
+  {
+    "id": "EVAL-14",
+    "name": "Hormuz closure + Jebel Ali disruption",
+    "tier": 2,
+    "active_event_ids": [
+      "DISRUPT-003",
+      "DISRUPT-005"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route",
+          "direct"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-HE",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-004": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-PM",
+      "correct_material": false
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 3
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    }
+  },
+  {
+    "id": "EVAL-15",
+    "name": "Qatar force majeure + Jebel Ali disruption",
+    "tier": 2,
+    "active_event_ids": [
+      "DISRUPT-004",
+      "DISRUPT-005"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route",
+          "direct",
+          "region",
+          "port"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-HE",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-004": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-PM",
+      "correct_material": false
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    }
+  },
+  {
+    "id": "EVAL-16",
+    "name": "Israel conflict + Red Sea attacks + Hormuz closure",
+    "tier": 3,
+    "active_event_ids": [
+      "DISRUPT-001",
+      "DISRUPT-002",
+      "DISRUPT-003"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-HE-04",
+          "SG-OC-01",
+          "SG-OC-02",
+          "SG-PB-01",
+          "SG-PM-01",
+          "SG-SC-01",
+          "SG-SC-03"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-004": 0.0,
+          "STRAT-005": 0.0,
+          "STRAT-007": 0.0,
+          "STRAT-009": 0.0
+        },
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": [
+          "SG-HE-04",
+          "SG-OC-02",
+          "SG-SC-01",
+          "SG-SC-03"
+        ]
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 4
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-17",
+    "name": "Hormuz closure + Qatar force majeure + Jebel Ali disruption",
+    "tier": 3,
+    "active_event_ids": [
+      "DISRUPT-003",
+      "DISRUPT-004",
+      "DISRUPT-005"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route",
+          "direct"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route",
+          "direct"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-HE",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-004": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-PM",
+      "correct_material": false
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.5,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    }
+  },
+  {
+    "id": "EVAL-18",
+    "name": "Israel conflict + Hormuz closure + Qatar force majeure",
+    "tier": 3,
+    "active_event_ids": [
+      "DISRUPT-001",
+      "DISRUPT-003",
+      "DISRUPT-004"
+    ],
+    "status": "failed",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route",
+          "direct"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "error": "Traceback (most recent call last):\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_common.py\", line 54, in _buffer_one_chunk\n    receive_into_buffer(self._socket, self._buffer, 2)\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_common.py\", line 340, in receive_into_buffer\n    n = sock.recv_into(\n        view[buffer.used : end], end - buffer.used\n    )\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_async_compat\\network\\_bolt_socket.py\", line 502, in recv_into\n    return self._wait_for_read(self._socket.recv_into, buffer, nbytes)\n           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_async_compat\\network\\_bolt_socket.py\", line 430, in _wait_for_read\n    return self._wait_for_io(\n           ~~~~~~~~~~~~~~~~~^\n        \"read\",\n        ^^^^^^^\n    ...<4 lines>...\n        **kwargs,\n        ^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_async_compat\\network\\_bolt_socket.py\", line 468, in _wait_for_io\n    return func(*args, **kwargs)\n  File \"C:\\Users\\palak\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\ssl.py\", line 1304, in recv_into\n    return self.read(nbytes, buffer)\n           ~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\ssl.py\", line 1138, in read\n    return self._sslobj.read(len, buffer)\n           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\nConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\supply-chain-ai-control-tower\\backend\\eval\\run_eval.py\", line 533, in main\n    apply_world_state(client, active_ids, world)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\supply-chain-ai-control-tower\\backend\\eval\\run_eval.py\", line 163, in apply_world_state\n    client.run_write(\n    ~~~~~~~~~~~~~~~~^\n        \"MERGE (p:Port {id: $id}) SET p.is_disrupted = $disrupted, p.disruption_severity = $severity\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        {\"id\": port[\"id\"], \"disrupted\": state[\"is_disrupted\"], \"severity\": state[\"severity\"]},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\supply-chain-ai-control-tower\\backend\\database\\neo4j_client.py\", line 43, in run_write\n    session.execute_write(lambda tx: tx.run(cypher, params or {}).consume())\n    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\work\\session.py\", line 754, in execute_write\n    return self._run_transaction(\n           ~~~~~~~~~~~~~~~~~~~~~^\n        WRITE_ACCESS,\n        ^^^^^^^^^^^^^\n    ...<3 lines>...\n        kwargs,\n        ^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\work\\session.py\", line 589, in _run_transaction\n    tx._commit()\n    ~~~~~~~~~~^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\work\\transaction.py\", line 220, in _commit\n    self._connection.fetch_all()\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_bolt.py\", line 883, in fetch_all\n    detail_delta, summary_delta = self.fetch_message()\n                                  ~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_bolt.py\", line 865, in fetch_message\n    tag, fields = self.inbox.pop(\n                  ~~~~~~~~~~~~~~^\n        hydration_hooks=self.responses[0].hydration_hooks\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_common.py\", line 77, in pop\n    self._buffer_one_chunk()\n    ~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_common.py\", line 73, in _buffer_one_chunk\n    Util.callback(self.on_error, error)\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_async_compat\\util.py\", line 105, in callback\n    return cb(*args, **kwargs)\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_bolt.py\", line 893, in _set_defunct_read\n    self._set_defunct(message, error=error, silent=silent)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_bolt.py\", line 966, in _set_defunct\n    raise IncompleteCommit(message) from error\nneo4j.exceptions.IncompleteCommit: Failed to read from defunct connection IPv4Address(('p-mt-2a41353b6b9a-10-0083.production-orch-0695.neo4j.io', 7687)) (ResolvedIPv4Address(('34.126.161.242', 7687)))\n"
+  },
+  {
+    "id": "EVAL-19",
+    "name": "Red Sea attacks + Hormuz closure + Jebel Ali disruption",
+    "tier": 3,
+    "active_event_ids": [
+      "DISRUPT-002",
+      "DISRUPT-003",
+      "DISRUPT-005"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port",
+          "route",
+          "direct"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-HE-04",
+          "SG-OC-01",
+          "SG-OC-02",
+          "SG-PB-01",
+          "SG-PM-01",
+          "SG-SC-01",
+          "SG-SC-03"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.75,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-004": 0.0,
+          "STRAT-005": 0.0,
+          "STRAT-006": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": [
+          "SG-HE-04",
+          "SG-OC-02",
+          "SG-SC-01",
+          "SG-SC-03"
+        ]
+      },
+      "risk_level_accuracy": 0.5,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 4
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-20",
+    "name": "Israel conflict + Red Sea attacks + Jebel Ali disruption",
+    "tier": 3,
+    "active_event_ids": [
+      "DISRUPT-001",
+      "DISRUPT-002",
+      "DISRUPT-005"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "route"
+        ]
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct",
+          "region",
+          "port",
+          "route"
+        ]
+      },
+      "SG-OC-02": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "route"
+        ]
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-HE-04",
+          "SG-OC-01",
+          "SG-OC-02",
+          "SG-PB-01",
+          "SG-PM-01",
+          "SG-SC-01",
+          "SG-SC-03"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.875,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-005": 0.0,
+          "STRAT-007": 0.0,
+          "STRAT-008": 0.0
+        },
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6667,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": [
+          "SG-HE-04",
+          "SG-OC-02",
+          "SG-SC-01",
+          "SG-SC-03"
+        ]
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 4
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-21",
+    "name": "Typhoon closes Kaohsiung",
+    "tier": 4,
+    "active_event_ids": [
+      "DISRUPT-101"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "HIGH",
+        "expected_delay_days": 14,
+        "reason_paths": [
+          "region",
+          "port"
+        ]
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-IC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-IC-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 0
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-IC-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    }
+  },
+  {
+    "id": "EVAL-22",
+    "name": "Fire at PenangChip",
+    "tier": 4,
+    "active_event_ids": [
+      "DISRUPT-102"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "direct"
+        ]
+      },
+      "SG-HE-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-IC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-IC-04"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 0
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-IC-04"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 1
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    }
+  },
+  {
+    "id": "EVAL-23",
+    "name": "Taiwan Strait closure",
+    "tier": 4,
+    "active_event_ids": [
+      "DISRUPT-103"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port"
+        ]
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-IC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-IC-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 0
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-IC-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 3
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    }
+  },
+  {
+    "id": "EVAL-24",
+    "name": "Shanghai port congestion",
+    "tier": 4,
+    "active_event_ids": [
+      "DISRUPT-104"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-02": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "MEDIUM",
+        "expected_delay_days": 7,
+        "reason_paths": [
+          "port"
+        ]
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "MEDIUM",
+        "expected_delay_days": 7,
+        "reason_paths": [
+          "port"
+        ]
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": true,
+        "is_available": true,
+        "risk_level": "MEDIUM",
+        "expected_delay_days": 7,
+        "reason_paths": [
+          "port"
+        ]
+      }
+    },
+    "true_material": "MAT-OC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-IC-02",
+          "SG-OC-04",
+          "SG-SC-02"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0
+        },
+        "skipped": 0
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571,
+        "true_positives": [
+          "SG-IC-02",
+          "SG-OC-04",
+          "SG-SC-02"
+        ],
+        "false_positives": [
+          "SG-PB-03"
+        ],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 0.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 4
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
+  },
+  {
+    "id": "EVAL-25",
+    "name": "Typhoon + Taiwan Strait",
+    "tier": 4,
+    "active_event_ids": [
+      "DISRUPT-101",
+      "DISRUPT-103"
+    ],
+    "status": "ok",
+    "ground_truth": {
+      "SG-IC-01": {
+        "affected": true,
+        "is_available": false,
+        "risk_level": "CRITICAL",
+        "expected_delay_days": 999,
+        "reason_paths": [
+          "region",
+          "port"
+        ]
+      },
+      "SG-IC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-IC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-HE-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-SC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PM-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-PB-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-01": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-02": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-03": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      },
+      "SG-OC-04": {
+        "affected": false,
+        "is_available": true,
+        "risk_level": "LOW",
+        "expected_delay_days": 0,
+        "reason_paths": []
+      }
+    },
+    "true_material": "MAT-IC",
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-IC-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 0
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-IC-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": false
+    }
+  }
+]
