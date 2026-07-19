@@ -17,7 +17,9 @@ export default function LiveSearchInput({ disabled, onStarted }) {
     try {
       const data = await triggerLiveSearch(query.trim(), sessionId);
       setLastResult(data);
-      onStarted(sessionId, data);
+      if (data.status === 'started') {
+        onStarted(sessionId, data);
+      }
     } catch (err) {
       setError(err.message || 'Live search failed — use a canned scenario instead.');
     } finally {
@@ -62,14 +64,32 @@ export default function LiveSearchInput({ disabled, onStarted }) {
         </p>
       )}
 
-      {lastResult && !lastResult.has_material_connection && (
-        <p className="mt-1 rounded border border-amber-600 bg-amber-500/10 px-2 py-1 text-[11px] text-amber-300">
-          No material supply-chain connection found: {lastResult.reasoning} The
-          pipeline is running anyway to verify — expect a low/no-risk result.
-        </p>
+      {lastResult && lastResult.status === 'no_impact' && (
+        <div className="mt-2 max-w-2xl rounded-md border border-amber-600 bg-amber-500/10 px-3 py-2">
+          <p className="text-xs font-semibold text-amber-300">
+            No material supply-chain impact identified
+          </p>
+          {lastResult.event?.name && (
+            <p className="mt-1 text-[11px] font-medium text-slate-200">
+              {lastResult.event.name}
+            </p>
+          )}
+          {lastResult.event?.description && (
+            <p className="mt-1 text-[11px] text-slate-300">
+              {lastResult.event.description}
+            </p>
+          )}
+          <p className="mt-1 text-[11px] italic text-amber-200">
+            Monitoring Agent: {lastResult.reasoning}
+          </p>
+          <p className="mt-1 text-[10px] text-slate-400">
+            Risk, Planning, Finance and Ops were not run — there is nothing in
+            the supply network for them to evaluate.
+          </p>
+        </div>
       )}
 
-      {lastResult && lastResult.has_material_connection && (
+      {lastResult && lastResult.status === 'started' && (
         <p className="mt-1 text-[11px] text-emerald-400">
           Connection found: {lastResult.reasoning}
         </p>

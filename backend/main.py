@@ -13,8 +13,10 @@ from pydantic import BaseModel
 import config
 from agents.graph import graph
 from agents.live_search import (
-    clear_live_events,
+    apply_live_clean_slate,
     extract_live_event,
+    has_material_impact,
+    restore_demo_state,
     write_live_event_to_graph,
 )
 from database.neo4j_client import get_client
@@ -162,8 +164,6 @@ async def _run_live_scenario(session: Session, scenario_id: str):
 
 @app.post("/api/scenario/live-search")
 async def trigger_live_search(request: LiveSearchRequest):
-    await asyncio.to_thread(clear_live_events)
-
     payload = await asyncio.to_thread(extract_live_event, request.query)
     if payload is None:
         raise HTTPException(
@@ -171,8 +171,25 @@ async def trigger_live_search(request: LiveSearchRequest):
             detail="Live search failed — use a canned scenario instead.",
         )
 
-    event_id = await asyncio.to_thread(write_live_event_to_graph, payload)
+    impact = await asyncio.to_thread(has_material_impact, payload)
     event = payload["event"]
+
+    if not impact:
+        # Monitoring found and understood the headline but it has no material
+        # connection to the graph: report that finding, run nothing.
+        return {
+            "session_id": request.session_id,
+            "status": "no_impact",
+            "event_id": None,
+            "has_material_connection": False,
+            "reasoning": payload.get("reasoning", ""),
+            "event": event,
+        }
+
+    # Clean slate: only the newly-extracted event may be active (and the seeded
+    # demo world-state flags must not leak into this run's risk assessment).
+    await asyncio.to_thread(apply_live_clean_slate)
+    event_id = await asyncio.to_thread(write_live_event_to_graph, payload)
 
     # Synthetic scenario entry so the unmodified monitoring/risk agents can
     # resolve it from SCENARIOS — the exact pattern eval/run_eval.py used.
@@ -203,8 +220,8 @@ async def trigger_live_search(request: LiveSearchRequest):
 
 @app.post("/api/scenario/live-search/reset")
 async def reset_live_events():
-    count = await asyncio.to_thread(clear_live_events)
-    return {"deactivated": count}
+    result = await asyncio.to_thread(restore_demo_state)
+    return {"status": "restored", **result}
 
 
 @app.post("/api/scenario/trigger")
