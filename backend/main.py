@@ -12,6 +12,11 @@ from pydantic import BaseModel
 
 import config
 from agents.graph import graph
+from agents.live_search import (
+    clear_live_events,
+    extract_live_event,
+    write_live_event_to_graph,
+)
 from database.neo4j_client import get_client
 from mcp_server import client as mcp_client
 from scenarios.march_2026 import SCENARIOS
@@ -35,6 +40,11 @@ class TriggerRequest(BaseModel):
 class DecisionRequest(BaseModel):
     decision: str  # "approve" | "reject"
     notes: Optional[str] = None
+
+
+class LiveSearchRequest(BaseModel):
+    query: str
+    session_id: str
 
 
 class Session:
@@ -139,6 +149,62 @@ async def _run_scenario(session: Session, scenario_id: str):
     finally:
         session.done = True
         await session.queue.put(_SENTINEL)
+
+
+async def _run_live_scenario(session: Session, scenario_id: str):
+    """Same pipeline as canned scenarios; pops the injected synthetic scenario
+    entry after the run (mirrors eval/run_eval.py's injection + cleanup)."""
+    try:
+        await _run_scenario(session, scenario_id)
+    finally:
+        SCENARIOS.pop(scenario_id, None)
+
+
+@app.post("/api/scenario/live-search")
+async def trigger_live_search(request: LiveSearchRequest):
+    await asyncio.to_thread(clear_live_events)
+
+    payload = await asyncio.to_thread(extract_live_event, request.query)
+    if payload is None:
+        raise HTTPException(
+            status_code=502,
+            detail="Live search failed — use a canned scenario instead.",
+        )
+
+    event_id = await asyncio.to_thread(write_live_event_to_graph, payload)
+    event = payload["event"]
+
+    # Synthetic scenario entry so the unmodified monitoring/risk agents can
+    # resolve it from SCENARIOS — the exact pattern eval/run_eval.py used.
+    scenario_id = f"live-{event_id}"
+    SCENARIOS[scenario_id] = {
+        "id": scenario_id,
+        "name": f"Live: {event.get('name', 'searched event')}",
+        "description": payload.get("reasoning", ""),
+        "trigger_date": event.get("start_date")
+        or datetime.now(timezone.utc).date().isoformat(),
+        "active_event_ids": [event_id],
+        "event_description": event.get("description", ""),
+    }
+
+    session = Session(request.session_id)
+    SESSIONS[request.session_id] = session
+    asyncio.create_task(_run_live_scenario(session, scenario_id))
+
+    return {
+        "session_id": request.session_id,
+        "status": "started",
+        "event_id": event_id,
+        "has_material_connection": payload.get("has_material_connection", False),
+        "reasoning": payload.get("reasoning", ""),
+        "event": event,
+    }
+
+
+@app.post("/api/scenario/live-search/reset")
+async def reset_live_events():
+    count = await asyncio.to_thread(clear_live_events)
+    return {"deactivated": count}
 
 
 @app.post("/api/scenario/trigger")

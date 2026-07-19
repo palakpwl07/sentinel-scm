@@ -5,6 +5,7 @@ import DisruptionEventBadge from './components/DisruptionEventBadge';
 import EvidenceChainCard from './components/EvidenceChainCard';
 import HITLModal from './components/HITLModal';
 import InventoryStatusBar from './components/InventoryStatusBar';
+import LiveSearchInput from './components/LiveSearchInput';
 import ScenarioSelector from './components/ScenarioSelector';
 import useAgentStream from './hooks/useAgentStream';
 import useDigitalTwin from './hooks/useDigitalTwin';
@@ -27,6 +28,11 @@ export default function App() {
     const newSessionId = `session-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     setActiveScenarioId(scenarioId);
     await triggerScenario(scenarioId, newSessionId);
+    setSessionId(newSessionId);
+  }, []);
+
+  const handleLiveSearchStarted = useCallback((newSessionId) => {
+    setActiveScenarioId(null);
     setSessionId(newSessionId);
   }, []);
 
@@ -56,6 +62,9 @@ export default function App() {
             disabled={isStreaming}
             onSelect={handleScenarioSelect}
           />
+          <div className="mt-2">
+            <LiveSearchInput disabled={isStreaming} onStarted={handleLiveSearchStarted} />
+          </div>
         </div>
         <DisruptionEventBadge events={twin?.events} />
       </header>
