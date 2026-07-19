@@ -228,7 +228,7 @@
       "cost": {
         "mape": null,
         "per_strategy_errors": {},
-        "skipped": 3
+        "skipped": 2
       },
       "predicted_material": "MAT-OC",
       "correct_material": true
@@ -460,10 +460,11 @@
     },
     "baseline": {
       "detection": {
-        "precision": 0.8333,
-        "recall": 0.8333,
-        "f1": 0.8333,
+        "precision": 0.8571,
+        "recall": 1.0,
+        "f1": 0.9231,
         "true_positives": [
+          "SG-HE-04",
           "SG-OC-01",
           "SG-OC-02",
           "SG-PB-01",
@@ -473,15 +474,13 @@
         "false_positives": [
           "SG-HE-01"
         ],
-        "false_negatives": [
-          "SG-HE-04"
-        ]
+        "false_negatives": []
       },
-      "risk_level_accuracy": 1.0,
+      "risk_level_accuracy": 0.8333,
       "cost": {
         "mape": null,
         "per_strategy_errors": {},
-        "skipped": 4
+        "skipped": 5
       },
       "predicted_material": "MAT-OC",
       "correct_material": true
@@ -949,7 +948,7 @@
       "cost": {
         "mape": null,
         "per_strategy_errors": {},
-        "skipped": 2
+        "skipped": 1
       },
       "predicted_material": "MAT-OC",
       "correct_material": false
@@ -2191,11 +2190,11 @@
           "SG-HE-01"
         ]
       },
-      "risk_level_accuracy": 0.6667,
+      "risk_level_accuracy": 1.0,
       "cost": {
         "mape": null,
         "per_strategy_errors": {},
-        "skipped": 5
+        "skipped": 3
       },
       "predicted_material": "MAT-OC",
       "correct_material": true
@@ -2458,7 +2457,7 @@
           "SG-SC-03"
         ]
       },
-      "risk_level_accuracy": 0.5,
+      "risk_level_accuracy": 0.75,
       "cost": {
         "mape": null,
         "per_strategy_errors": {},
@@ -2705,15 +2704,17 @@
     },
     "baseline": {
       "detection": {
-        "precision": 1.0,
+        "precision": 0.75,
         "recall": 0.375,
-        "f1": 0.5455,
+        "f1": 0.5,
         "true_positives": [
           "SG-HE-01",
           "SG-OC-01",
           "SG-PB-01"
         ],
-        "false_positives": [],
+        "false_positives": [
+          "SG-IC-01"
+        ],
         "false_negatives": [
           "SG-HE-04",
           "SG-OC-02",
@@ -3465,7 +3466,7 @@
       "cost": {
         "mape": null,
         "per_strategy_errors": {},
-        "skipped": 3
+        "skipped": 2
       },
       "predicted_material": "MAT-OC",
       "correct_material": false
@@ -3699,7 +3700,7 @@
         "false_positives": [],
         "false_negatives": []
       },
-      "risk_level_accuracy": 1.0,
+      "risk_level_accuracy": 0.5,
       "cost": {
         "mape": null,
         "per_strategy_errors": {},
@@ -4232,7 +4233,7 @@
       "DISRUPT-003",
       "DISRUPT-004"
     ],
-    "status": "failed",
+    "status": "ok",
     "ground_truth": {
       "SG-IC-01": {
         "affected": false,
@@ -4423,7 +4424,59 @@
       }
     },
     "true_material": "MAT-OC",
-    "error": "Traceback (most recent call last):\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_common.py\", line 54, in _buffer_one_chunk\n    receive_into_buffer(self._socket, self._buffer, 2)\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_common.py\", line 340, in receive_into_buffer\n    n = sock.recv_into(\n        view[buffer.used : end], end - buffer.used\n    )\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_async_compat\\network\\_bolt_socket.py\", line 502, in recv_into\n    return self._wait_for_read(self._socket.recv_into, buffer, nbytes)\n           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_async_compat\\network\\_bolt_socket.py\", line 430, in _wait_for_read\n    return self._wait_for_io(\n           ~~~~~~~~~~~~~~~~~^\n        \"read\",\n        ^^^^^^^\n    ...<4 lines>...\n        **kwargs,\n        ^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_async_compat\\network\\_bolt_socket.py\", line 468, in _wait_for_io\n    return func(*args, **kwargs)\n  File \"C:\\Users\\palak\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\ssl.py\", line 1304, in recv_into\n    return self.read(nbytes, buffer)\n           ~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\ssl.py\", line 1138, in read\n    return self._sslobj.read(len, buffer)\n           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\nConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\supply-chain-ai-control-tower\\backend\\eval\\run_eval.py\", line 533, in main\n    apply_world_state(client, active_ids, world)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\supply-chain-ai-control-tower\\backend\\eval\\run_eval.py\", line 163, in apply_world_state\n    client.run_write(\n    ~~~~~~~~~~~~~~~~^\n        \"MERGE (p:Port {id: $id}) SET p.is_disrupted = $disrupted, p.disruption_severity = $severity\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        {\"id\": port[\"id\"], \"disrupted\": state[\"is_disrupted\"], \"severity\": state[\"severity\"]},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\supply-chain-ai-control-tower\\backend\\database\\neo4j_client.py\", line 43, in run_write\n    session.execute_write(lambda tx: tx.run(cypher, params or {}).consume())\n    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\work\\session.py\", line 754, in execute_write\n    return self._run_transaction(\n           ~~~~~~~~~~~~~~~~~~~~~^\n        WRITE_ACCESS,\n        ^^^^^^^^^^^^^\n    ...<3 lines>...\n        kwargs,\n        ^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\work\\session.py\", line 589, in _run_transaction\n    tx._commit()\n    ~~~~~~~~~~^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\work\\transaction.py\", line 220, in _commit\n    self._connection.fetch_all()\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_bolt.py\", line 883, in fetch_all\n    detail_delta, summary_delta = self.fetch_message()\n                                  ~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_bolt.py\", line 865, in fetch_message\n    tag, fields = self.inbox.pop(\n                  ~~~~~~~~~~~~~~^\n        hydration_hooks=self.responses[0].hydration_hooks\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_common.py\", line 77, in pop\n    self._buffer_one_chunk()\n    ~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_common.py\", line 73, in _buffer_one_chunk\n    Util.callback(self.on_error, error)\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_async_compat\\util.py\", line 105, in callback\n    return cb(*args, **kwargs)\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_bolt.py\", line 893, in _set_defunct_read\n    self._set_defunct(message, error=error, silent=silent)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\palak\\OneDrive\\Desktop\\.supplychainagent\\.venv\\Lib\\site-packages\\neo4j\\_sync\\io\\_bolt.py\", line 966, in _set_defunct\n    raise IncompleteCommit(message) from error\nneo4j.exceptions.IncompleteCommit: Failed to read from defunct connection IPv4Address(('p-mt-2a41353b6b9a-10-0083.production-orch-0695.neo4j.io', 7687)) (ResolvedIPv4Address(('34.126.161.242', 7687)))\n"
+    "agent": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": 0.0,
+        "per_strategy_errors": {
+          "STRAT-001": 0.0,
+          "STRAT-002": 0.0,
+          "STRAT-003": 0.0,
+          "STRAT-004": 0.0,
+          "STRAT-005": 0.0,
+          "STRAT-007": 0.0
+        },
+        "skipped": 2
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    },
+    "baseline": {
+      "detection": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "true_positives": [
+          "SG-HE-01",
+          "SG-OC-01",
+          "SG-PB-01",
+          "SG-PM-01"
+        ],
+        "false_positives": [],
+        "false_negatives": []
+      },
+      "risk_level_accuracy": 1.0,
+      "cost": {
+        "mape": null,
+        "per_strategy_errors": {},
+        "skipped": 4
+      },
+      "predicted_material": "MAT-OC",
+      "correct_material": true
+    }
   },
   {
     "id": "EVAL-19",
@@ -4941,20 +4994,20 @@
     "baseline": {
       "detection": {
         "precision": 1.0,
-        "recall": 0.5,
-        "f1": 0.6667,
+        "recall": 0.875,
+        "f1": 0.9333,
         "true_positives": [
           "SG-HE-01",
+          "SG-HE-04",
           "SG-OC-01",
           "SG-PB-01",
-          "SG-PM-01"
+          "SG-PM-01",
+          "SG-SC-01",
+          "SG-SC-03"
         ],
         "false_positives": [],
         "false_negatives": [
-          "SG-HE-04",
-          "SG-OC-02",
-          "SG-SC-01",
-          "SG-SC-03"
+          "SG-OC-02"
         ]
       },
       "risk_level_accuracy": 1.0,
@@ -6089,7 +6142,7 @@
       "cost": {
         "mape": null,
         "per_strategy_errors": {},
-        "skipped": 2
+        "skipped": 3
       },
       "predicted_material": "MAT-OC",
       "correct_material": false

@@ -4,6 +4,7 @@ import json
 from datetime import datetime, timezone
 
 from config import qwen_chat_json
+from mcp_server.client import call_tool_sync
 from mcp_server.tools.alternative_suppliers import find_alternative_suppliers
 
 from .state import SupplyChainState
@@ -65,7 +66,11 @@ def planning_agent(state: SupplyChainState) -> dict:
             s["supplier_id"] for s in state["affected_suppliers"]
             if s["material_id"] == material_id
         ]
-        alternatives = find_alternative_suppliers(material_id, excluded)
+        alternatives = call_tool_sync(
+            "find_alternative_suppliers_tool",
+            {"material_id": material_id, "excluded_supplier_ids": excluded},
+            fallback_fn=lambda m=material_id, e=excluded: find_alternative_suppliers(m, e),
+        )
         if not alternatives:
             lines.append(f"- {material_id}: NO viable alternatives found — flagged for arbitration")
             continue

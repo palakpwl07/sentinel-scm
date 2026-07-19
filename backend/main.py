@@ -13,6 +13,7 @@ from pydantic import BaseModel
 import config
 from agents.graph import graph
 from database.neo4j_client import get_client
+from mcp_server import client as mcp_client
 from scenarios.march_2026 import SCENARIOS
 
 app = FastAPI(title="SupplyChainAI Control Tower", version="1.0.0")
@@ -236,7 +237,15 @@ async def list_scenarios():
 
 @app.get("/api/health")
 async def health():
-    return {"status": "ok", "neo4j": get_client().verify_connectivity()}
+    mcp_status = await mcp_client.probe_mcp()
+    return {
+        "status": "ok",
+        "neo4j": get_client().verify_connectivity(),
+        "mcp": mcp_status["mcp"],
+        "mcp_tools": mcp_status["mcp_tools"],
+        "mcp_server_url": mcp_client.MCP_SERVER_URL,
+        "mcp_enabled": mcp_client.MCP_ENABLED,
+    }
 
 
 if __name__ == "__main__":

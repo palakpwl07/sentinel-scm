@@ -1,11 +1,23 @@
 version: '3.8'
 services:
+  mcp-server:
+    build: ./backend
+    command: python -m mcp_server.server
+    ports:
+      - "8001:8001"   # MCP server (SSE)
+    env_file: ./backend/.env
+    restart: unless-stopped
+
   backend:
     build: ./backend
     ports:
       - "8000:8000"
-      - "8001:8001"   # MCP server
     env_file: ./backend/.env
+    environment:
+      # Reach the MCP server through the compose network, not localhost
+      - MCP_CLIENT_HOST=mcp-server
+    depends_on:
+      - mcp-server
     restart: unless-stopped
 
   frontend:

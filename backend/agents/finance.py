@@ -3,6 +3,7 @@
 from datetime import datetime, timezone
 
 import config
+from mcp_server.client import call_tool_sync
 from mcp_server.tools.mitigation_cost import evaluate_mitigation_cost
 
 from .state import SupplyChainState
@@ -22,12 +23,19 @@ def finance_agent(state: SupplyChainState) -> dict:
 
     for strategy in state["proposed_strategies"]:
         try:
-            result = evaluate_mitigation_cost(
-                strategy_type=strategy["strategy_type"],
-                material_id=strategy["material_id"],
-                target_supplier_id=strategy.get("target_supplier_id") or "",
-                quantity_units=strategy["quantity_units"],
-                urgency_days=strategy["urgency_days"],
+            result = call_tool_sync(
+                "evaluate_mitigation_cost_tool",
+                {
+                    "strategy_type": strategy["strategy_type"],
+                    "material_id": strategy["material_id"],
+                    "target_supplier_id": strategy.get("target_supplier_id") or "",
+                    "quantity_units": strategy["quantity_units"],
+                    "urgency_days": strategy["urgency_days"],
+                },
+                fallback_fn=lambda s=strategy: evaluate_mitigation_cost(
+                    s["strategy_type"], s["material_id"], s.get("target_supplier_id") or "",
+                    s["quantity_units"], s["urgency_days"],
+                ),
             )
         except Exception as exc:
             result = {

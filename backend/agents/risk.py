@@ -3,6 +3,7 @@
 from datetime import datetime, timezone
 
 from database.neo4j_client import get_client
+from mcp_server.client import call_tool_sync
 from mcp_server.tools.inventory_runway import calculate_inventory_runway
 from mcp_server.tools.supplier_risk import assess_supplier_risk
 from scenarios.march_2026 import SCENARIOS
@@ -31,7 +32,11 @@ def risk_agent(state: SupplyChainState) -> dict:
         """
     )
 
-    inventory_runways = calculate_inventory_runway(ALL_MATERIAL_IDS)
+    inventory_runways = call_tool_sync(
+        "calculate_inventory_runway_tool",
+        {"material_ids": ALL_MATERIAL_IDS},
+        fallback_fn=lambda: calculate_inventory_runway(ALL_MATERIAL_IDS),
+    )
 
     affected_suppliers = []
     score = 0.0
@@ -39,7 +44,13 @@ def risk_agent(state: SupplyChainState) -> dict:
     justification_parts = []
 
     for record in supplier_records:
-        assessment = assess_supplier_risk(record["supplier_id"], active_event_ids)
+        assessment = call_tool_sync(
+            "assess_supplier_risk_tool",
+            {"supplier_id": record["supplier_id"], "active_event_ids": active_event_ids},
+            fallback_fn=lambda r=record: assess_supplier_risk(
+                r["supplier_id"], active_event_ids
+            ),
+        )
         if assessment["risk_level"] in ("LOW", "UNKNOWN"):
             continue
 
