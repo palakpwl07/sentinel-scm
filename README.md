@@ -1,6 +1,7 @@
 # SentinelSCM — Multi-Agent Supply Chain Control Tower
 
 **Live demo:** http://47.82.152.175:3000
+
 **Track:** Global AI Hackathon Series with Qwen Cloud — Track 3: Agent Society
 
 Five LangGraph agents monitor, assess, plan, and finance a response to supply chain disruptions — from a seeded 2026 Middle East crisis or from a live disruption headline — with a full evidence chain and human approval before anything is recommended.
