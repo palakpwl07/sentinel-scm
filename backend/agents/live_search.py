@@ -21,16 +21,44 @@ VALID_SEVERITIES = {"CRITICAL", "HIGH", "MEDIUM"}
 
 
 def _fetch_graph_entity_reference() -> dict:
-    """{id, name} pairs for all regions, ports, suppliers — the closed set that
-    constrains the LLM's extraction to valid graph IDs. id/name only."""
+    """The closed set that constrains extraction to valid graph IDs.
+
+    Includes each supplier's shipping route and the route's named-chokepoint
+    flags (passes_through_hormuz / passes_through_red_sea), so a query naming a
+    chokepoint can be matched against first-class graph attributes directly
+    rather than only through free-text geographic reasoning.
+    """
     client = get_client()
     regions = client.run_query("MATCH (r:Region) RETURN r.id AS id, r.name AS name")
     ports = client.run_query("MATCH (p:Port) RETURN p.id AS id, p.name AS name")
     suppliers = client.run_query(
-        "MATCH (s:Supplier) RETURN s.id AS id, s.name AS name, "
-        "s.country AS country, s.city AS city"
+        """
+        MATCH (s:Supplier)
+        OPTIONAL MATCH (route:ShippingRoute {id: s.route_id})
+        RETURN s.id AS id, s.name AS name, s.country AS country, s.city AS city,
+               s.primary_port_id AS ships_via_port_id,
+               route.id AS route_id, route.name AS route_name,
+               coalesce(route.passes_through_hormuz, false) AS route_passes_through_hormuz,
+               coalesce(route.passes_through_red_sea, false) AS route_passes_through_red_sea
+        """
     )
-    return {"regions": regions, "ports": ports, "suppliers": suppliers}
+    chokepoints = client.run_query(
+        """
+        MATCH (r:ShippingRoute)
+        WHERE r.passes_through_hormuz = true OR r.passes_through_red_sea = true
+        RETURN r.id AS route_id, r.name AS route_name,
+               r.origin_port_id AS origin_port_id,
+               r.destination_port_id AS destination_port_id,
+               r.passes_through_hormuz AS passes_through_hormuz,
+               r.passes_through_red_sea AS passes_through_red_sea
+        """
+    )
+    return {
+        "regions": regions,
+        "ports": ports,
+        "suppliers": suppliers,
+        "chokepoint_routes": chokepoints,
+    }
 
 
 LIVE_SEARCH_SYSTEM_PROMPT = """You are the Monitoring Agent for Orbital Manufacturing's
@@ -68,16 +96,39 @@ if none apply. If has_material_connection is false, still fill "event" with what
 found (for display), but leave the affected_*_ids arrays empty. Never fabricate a
 connection to force a match.
 
-Connection criteria — apply strictly:
-- A material connection requires that the facts you found plausibly disrupt a SPECIFIC
-  listed entity: a supplier's operations in its own city/facility, a listed port's
-  operations, or shipping through a listed region.
-- Geographic association at the country or state level is NOT sufficient. A disaster in
-  one part of a large country does not affect a supplier hundreds of kilometres away
-  unless the reporting explicitly says that supplier's city, facility, or port is hit.
-- directly_impacted_supplier_ids: only if the reporting explicitly covers that
-  supplier's facility, company, or city.
-- When in doubt, set has_material_connection to false and say why in "reasoning"."""
+Connection criteria — the test is SPECIFICITY of the named entity, not distance:
+
+A material connection EXISTS when the event names, or directly disrupts, any of:
+1. NAMED CHOKEPOINT — a specific strait, canal, or waterway (Strait of Hormuz, Red Sea,
+   Bab el-Mandeb, Suez Canal, Cape of Good Hope). These are first-class attributes in the
+   graph: the "chokepoint_routes" list gives every route with passes_through_hormuz or
+   passes_through_red_sea set, plus its origin/destination ports, and each supplier entry
+   carries its own route_passes_through_* flags. If the event names a chokepoint, match
+   EVERY supplier whose route passes through it and EVERY port on those routes. You do NOT
+   need the reporting to name the individual supplier or port — the graph already encodes
+   that they ship through that chokepoint, and that link is sufficient.
+2. NAMED PORT — a listed port named in or clearly identified by the reporting.
+3. NAMED SUPPLIER/FACILITY — reporting covering that supplier's company, facility, or city.
+4. NAMED REGION under a region-wide disruption (war, blockade, national strike, export ban)
+   that plausibly affects operations or shipping across the whole region.
+
+A material connection DOES NOT exist for vague geographic association alone: a localised
+event somewhere inside a large country or state, with no named chokepoint, port, supplier,
+or region-wide disruption, does not connect just because a supplier is in that country.
+A flood in one part of a large country does not affect a supplier hundreds of kilometres
+away unless the reporting ties it to that supplier's city, facility, or port.
+
+The distinction: "Strait of Hormuz closure" is a specific named chokepoint the graph models
+explicitly — match it. "Flooding in Texas" is a large vague area with no chokepoint, port,
+or facility named — do not match it unless the reporting names the supplier's city or port.
+
+Populate the arrays accordingly:
+- affected_port_ids: ports named in the reporting, plus origin/destination ports of any
+  matched chokepoint routes.
+- directly_impacted_supplier_ids: suppliers whose facility/city is covered, plus suppliers
+  whose route passes through a named, disrupted chokepoint.
+- affected_region_ids: regions under a region-wide disruption, or hosting matched entities.
+- When genuinely uncertain after applying the above, prefer false and explain in "reasoning"."""
 
 
 def extract_live_event(user_query: str) -> dict | None:
@@ -205,7 +256,84 @@ def write_live_event_to_graph(payload: dict) -> str:
             "MERGE (e)-[:DIRECTLY_IMPACTS]->(s)",
             {"eid": event_id, "sid": supplier_id},
         )
+
+    # Project the event's consequences onto the world-state flags the risk
+    # tools read, so a live event disrupts the graph like a seeded one does.
+    apply_live_event_world_state(payload, event_id)
     return event_id
+
+
+def apply_live_event_world_state(payload: dict, event_id: str) -> dict:
+    """Project a live event's consequences onto supplier/port/route flags.
+
+    Demo events have their consequences pre-baked into the seed (QatarEnergy
+    is_available=false, RT-GULF-SGP BLOCKED, Ras Laffan CRITICAL...). A live
+    event previously wrote only the node and its relationships, so the risk
+    tools — which read these flags directly — saw an undisrupted world and
+    under-reported delays, and Planning could still rank a cut-off supplier as
+    a viable alternative. This makes a LIVE-* event affect the graph the same
+    way a seeded event does. Returns a summary of what was projected.
+    """
+    event = payload["event"]
+    severity = event["severity"]
+    client = get_client()
+    reason = f"{event.get('name', 'Live event')} ({event_id})"
+
+    # CRITICAL closes a supplier outright; HIGH/MEDIUM degrade but don't halt.
+    impacted = event["directly_impacted_supplier_ids"]
+    if severity == "CRITICAL" and impacted:
+        client.run_write(
+            "MATCH (s:Supplier) WHERE s.id IN $ids "
+            "SET s.is_available = false, s.unavailability_reason = $reason",
+            {"ids": impacted, "reason": reason},
+        )
+
+    ports = event["affected_port_ids"]
+    if ports:
+        client.run_write(
+            "MATCH (p:Port) WHERE p.id IN $ids "
+            "SET p.is_disrupted = true, p.disruption_severity = $severity, "
+            "p.disruption_reason = $reason",
+            {"ids": ports, "severity": severity, "reason": reason},
+        )
+
+    # Routes touching an affected port are disrupted: BLOCKED for CRITICAL,
+    # REROUTED (+14 days, +30% freight — the Cape-reroute convention) otherwise.
+    blocked = severity == "CRITICAL"
+    route_rows = client.run_query(
+        """
+        MATCH (r:ShippingRoute)
+        WHERE r.origin_port_id IN $ports OR r.destination_port_id IN $ports
+        SET r.is_disrupted = true,
+            r.disruption_type = $dtype,
+            r.disruption_notes = $reason,
+            r.transit_days_current = CASE WHEN $blocked THEN 999
+                                          ELSE r.transit_days_normal + 14 END,
+            r.freight_cost_sgd_per_unit_current =
+                CASE WHEN $blocked THEN 999.0
+                     ELSE round(r.freight_cost_sgd_per_unit_normal * 1.3 * 100) / 100 END
+        RETURN collect(r.id) AS ids
+        """,
+        {"ports": ports, "dtype": "BLOCKED" if blocked else "REROUTED",
+         "reason": reason, "blocked": blocked},
+    )
+    route_ids = route_rows[0]["ids"] if route_rows else []
+    if route_ids:
+        client.run_write(
+            """
+            MATCH (:Port)-[rel:ROUTE_TO]->(:Port) WHERE rel.route_id IN $ids
+            MATCH (r:ShippingRoute {id: rel.route_id})
+            SET rel.is_disrupted = true, rel.transit_days_current = r.transit_days_current
+            """,
+            {"ids": route_ids},
+        )
+
+    return {
+        "suppliers_made_unavailable": impacted if blocked else [],
+        "ports_disrupted": ports,
+        "routes_disrupted": route_ids,
+        "disruption_type": "BLOCKED" if blocked else "REROUTED",
+    }
 
 
 def clear_live_events() -> int:

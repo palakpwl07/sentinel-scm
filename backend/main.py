@@ -228,6 +228,12 @@ async def reset_live_events():
 async def trigger_scenario(request: TriggerRequest):
     if request.scenario_id not in SCENARIOS:
         raise HTTPException(status_code=404, detail=f"Unknown scenario {request.scenario_id}")
+
+    # Canned scenarios always run against the seeded demo defaults, regardless
+    # of what ran before (a live search neutralizes world-state by design).
+    # Unconditional so no manual /reset is ever required.
+    await asyncio.to_thread(restore_demo_state)
+
     session = Session(request.session_id)
     SESSIONS[request.session_id] = session
     asyncio.create_task(_run_scenario(session, request.scenario_id))

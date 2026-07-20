@@ -16,25 +16,51 @@ export default function App() {
   const [activeScenarioId, setActiveScenarioId] = useState(null);
   const [sessionId, setSessionId] = useState(null);
 
-  const { twin, refresh } = useDigitalTwin();
-  const { messages, isStreaming, isHITLRequired, finalRecommendation, clearHITL } =
-    useAgentStream(sessionId);
+  const { twin, refresh, clearEvents } = useDigitalTwin();
+  const {
+    messages,
+    isStreaming,
+    isHITLRequired,
+    finalRecommendation,
+    clearHITL,
+    resetRun,
+  } = useAgentStream(sessionId);
+
+  /** Wipe the previous run's visible output before a new request is issued. */
+  const startFreshRun = useCallback(() => {
+    resetRun();
+    clearEvents();
+    setSessionId(null);
+  }, [resetRun, clearEvents]);
 
   useEffect(() => {
     fetchScenarios().then(setScenarios).catch(() => setScenarios([]));
   }, []);
 
-  const handleScenarioSelect = useCallback(async (scenarioId) => {
-    const newSessionId = `session-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-    setActiveScenarioId(scenarioId);
-    await triggerScenario(scenarioId, newSessionId);
-    setSessionId(newSessionId);
-  }, []);
+  const handleScenarioSelect = useCallback(
+    async (scenarioId) => {
+      const newSessionId = `session-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      startFreshRun();
+      setActiveScenarioId(scenarioId);
+      await triggerScenario(scenarioId, newSessionId);
+      refresh();
+      setSessionId(newSessionId);
+    },
+    [startFreshRun, refresh]
+  );
 
-  const handleLiveSearchStarted = useCallback((newSessionId) => {
+  const handleLiveSearchStart = useCallback(() => {
+    startFreshRun();
     setActiveScenarioId(null);
-    setSessionId(newSessionId);
-  }, []);
+  }, [startFreshRun]);
+
+  const handleLiveSearchStarted = useCallback(
+    (newSessionId) => {
+      refresh();
+      setSessionId(newSessionId);
+    },
+    [refresh]
+  );
 
   const handleDecision = useCallback(
     async (decision, notes) => {
@@ -63,7 +89,11 @@ export default function App() {
             onSelect={handleScenarioSelect}
           />
           <div className="mt-2">
-            <LiveSearchInput disabled={isStreaming} onStarted={handleLiveSearchStarted} />
+            <LiveSearchInput
+              disabled={isStreaming}
+              onSearchStart={handleLiveSearchStart}
+              onStarted={handleLiveSearchStarted}
+            />
           </div>
         </div>
         <DisruptionEventBadge events={twin?.events} />

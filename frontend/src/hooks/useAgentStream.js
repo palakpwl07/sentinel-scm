@@ -82,5 +82,22 @@ export default function useAgentStream(sessionId) {
 
   const clearHITL = useCallback(() => setIsHITLRequired(false), []);
 
-  return { messages, isStreaming, isHITLRequired, finalRecommendation, clearHITL };
+  /** Drop the previous run's output immediately, before the next request's
+   *  data starts arriving, so old content never lingers on screen. */
+  const resetRun = useCallback(() => {
+    completedRef.current = true; // suppress the reconnect path while tearing down
+    disconnect();
+    setMessages([]);
+    setIsHITLRequired(false);
+    setFinalRecommendation(null);
+  }, [disconnect]);
+
+  return {
+    messages,
+    isStreaming,
+    isHITLRequired,
+    finalRecommendation,
+    clearHITL,
+    resetRun,
+  };
 }

@@ -23,9 +23,15 @@ export default function useDigitalTwin() {
     }
   }, []);
 
+  /** Clear the active-event badges immediately when a new run starts; the
+   *  graph/materials stay rendered so the twin doesn't flash empty. */
+  const clearEvents = useCallback(() => {
+    setTwin((prev) => (prev ? { ...prev, events: [] } : prev));
+  }, []);
+
   useEffect(() => {
     refresh();
   }, [refresh]);
 
-  return { twin, loading, error, refresh };
+  return { twin, loading, error, refresh, clearEvents };
 }

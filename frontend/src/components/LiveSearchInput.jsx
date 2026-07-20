@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { triggerLiveSearch } from '../lib/api';
 
-export default function LiveSearchInput({ disabled, onStarted }) {
+export default function LiveSearchInput({ disabled, onSearchStart, onStarted }) {
   const [query, setQuery] = useState('');
   const [searching, setSearching] = useState(false);
   const [error, setError] = useState(null);
@@ -13,6 +13,9 @@ export default function LiveSearchInput({ disabled, onStarted }) {
     setSearching(true);
     setError(null);
     setLastResult(null);
+    // Clear the previous run's trace/evidence/badges before the request starts —
+    // live search takes 5-15s, so stale output would otherwise sit on screen.
+    if (onSearchStart) onSearchStart();
     const sessionId = `live-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     try {
       const data = await triggerLiveSearch(query.trim(), sessionId);
